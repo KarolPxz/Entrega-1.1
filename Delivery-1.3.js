@@ -44,21 +44,6 @@ function showLog( userDetails ) {
 showUser(true, showLog);
 showUser(false, showLog);
 
-/*
-function returnPromise() {
-    return new Promise((resolve, reyect) => {
-        setTimeout(() => {
-            let allOk = true;
-            if (allOk) {
-                resolve('All be Ok');
-            } else {
-                reyect('Somenting has gone wrong')
-            }
-        }, 2000)
-    })
-}
-returnPromise()
-    .then(resp => console.log(resp))
-    .catch(error => console.error(error));
-
-*/
+//Level 2
+//- Exercise 1
+//Given the employee and salary objects, create an arrow function getEmployee() that returns a Promise by looking up the object by its id.
