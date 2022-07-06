@@ -47,3 +47,40 @@ showUser(false, showLog);
 //Level 2
 //- Exercise 1
 //Given the employee and salary objects, create an arrow function getEmployee() that returns a Promise by looking up the object by its id.
+let employees = [{
+    id: 1,
+    name: 'Linux Torvalds'
+}, {
+    id: 2,
+    name: 'Bill Gates'
+},{
+    id: 3,
+    name: 'Jeff Bezos'
+}];
+ 
+let salaries = [{
+    id: 1,
+    salary: 4000
+}, {
+    id: 2,
+    salary: 1000
+}, {
+    id: 3,
+    salary: 2000
+}];
+
+const getEmployee = (employees, id) => {
+    let encontrado;
+
+    if (employees.id == id) {
+       encontrado = true;
+    } else {
+       encontrado = false;
+    }
+  console.log(encontrado); 
+   
+};
+
+let filter = employees.filter(getEmployee);
+
+getEmployee(employees, 1);
