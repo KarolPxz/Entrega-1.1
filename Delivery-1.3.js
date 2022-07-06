@@ -1,7 +1,7 @@
 //Level 1
 //- Exercise 1
 //Creates a function that returns a Promise that invokes the resolve () or reject () function that it receives. Invoke it by passing the two functions to it so that they print a different message depending on whether the Promise is resolved or not.
-
+//let feedTheDOg = true;
 function eaten(feedTheDOg) {
     return new Promise((resolve, reyect) => {
         if (!feedTheDOg) {
@@ -24,7 +24,25 @@ eaten(true)
 
 //- Exercise 2
 //Creates an arrow function that receives a parameter and a callback function and passes a message or another to the function (which will be printed by console) depending on the parameter received.
+const showUser = (userExists, callBack) => {
+    let userDetails = " "; 
+    if (!userExists) {
+        userDetails = `user does not exist, collect data and create it`;
+    } else {
+         userDetails = {
+            name: ' Toni',
+            age: ' 35',
+            id: ' 001'
+        }
+    }
+    callBack(userDetails);
+};
 
+function showLog( userDetails ) {
+    console.log(userDetails);
+}
+showUser(true, showLog);
+showUser(false, showLog);
 
 /*
 function returnPromise() {
