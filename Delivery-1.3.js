@@ -82,30 +82,33 @@ const getEmployee = ( id ) => {
 };
 
 getEmployee( 2 )
-    .then(res => console.log( res ))
+    .then(res => console.log( res.name ))
     .catch( err => console.log( err ));
 
 //- Exercise 2
 //Create another arrow function getSalary() similar to the previous one that receives an employee object as a parameter and returns its salary.
 
 const getSalary = ( employee ) => {
+    
     return new Promise (( resolve, reyect ) => {
         let employeeSalary = salaries.find( salary => salary.id == employee.id);
         if ( !employeeSalary ) {
-            reyect ( ' the employee  salary does not exist in the database' );
+            reyect ( ' the employee  salary does not exist in the database.' );
         } else {
-             resolve (`The salary is: ${ employeeSalary.salary }`);
+             resolve ( employeeSalary );
         }
     });
     };
     getSalary( employees[1] )
-        .then( res => console.log(res) )
+        .then( res => console.log(res.salary) )
         .catch( err => console.error(err) );
 
-//- Ejercicio 3
-//Invoca la primera función getEmployee() y después getSalary() anidando la ejecución de las dos promisas de forma que se devuelva por la consola el nombre del empleado/a y su salario.
+        //- Exercise 3
+//Invokes the first getEmployee() function and then getSalary() nesting the execution of the two promises so that the employee's name and salary are returned to the console.
 
-getEmployee( 2 )
-    .then(employee => getSalary(employee))
-    .then(  res => console.log(res))
+getEmployee( 3 )
+    .then( employee => { 
+        getSalary(employee)
+         .then(res => console.log(`The user is: ${employee.name },`, `and the salary is: ${res.salary}`));
+    })
     .catch(err => console.error(err));  
