@@ -112,3 +112,5 @@ getEmployee(3)
             .then(res => console.log(`The user is: ${employee.name },`, `and the salary is: ${res.salary}`));
     })
     .catch(err => console.error(err));
+
+  //  export { getSalary, getEmployee, employees, salaries }
