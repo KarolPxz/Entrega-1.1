@@ -47,6 +47,7 @@ showUser(false, showLog);
 //Level 2
 //- Exercise 1
 //Given the employee and salary objects, create an arrow function getEmployee() that returns a Promise by looking up the object by its id.
+
 let employees = [{
     id: 1,
     name: 'Linux Torvalds'
@@ -69,18 +70,42 @@ let salaries = [{
     salary: 2000
 }];
 
-const getEmployee = (employees, id) => {
-    let encontrado;
-
-    if (employees.id == id) {
-       encontrado = true;
-    } else {
-       encontrado = false;
-    }
-  console.log(encontrado); 
-   
+const getEmployee = ( id ) => {
+    return new Promise (( resolve, reyect  ) => {
+        let foundEmployee = employees.find( employee => employee.id == id );
+        if ( foundEmployee ) {
+            resolve (  foundEmployee );
+        } else {
+            reyect ( 'The employee does not exist in the database' );
+        } 
+     })
 };
 
-let filter = employees.filter(getEmployee);
+getEmployee( 2 )
+    .then(res => console.log( res ))
+    .catch( err => console.log( err ));
 
-getEmployee(employees, 1);
+//- Exercise 2
+//Create another arrow function getSalary() similar to the previous one that receives an employee object as a parameter and returns its salary.
+
+const getSalary = ( employee ) => {
+    return new Promise (( resolve, reyect ) => {
+        let employeeSalary = salaries.find( salary => salary.id == employee.id);
+        if ( !employeeSalary ) {
+            reyect ( ' the employee  salary does not exist in the database' );
+        } else {
+             resolve (`The salary is: ${ employeeSalary.salary }`);
+        }
+    });
+    };
+    getSalary( employees[1] )
+        .then( res => console.log(res) )
+        .catch( err => console.error(err) );
+
+//- Ejercicio 3
+//Invoca la primera función getEmployee() y después getSalary() anidando la ejecución de las dos promisas de forma que se devuelva por la consola el nombre del empleado/a y su salario.
+
+getEmployee( 2 )
+    .then(employee => getSalary(employee))
+    .then(  res => console.log(res))
+    .catch(err => console.error(err));  
