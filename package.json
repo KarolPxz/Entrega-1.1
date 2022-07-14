@@ -2,12 +2,12 @@
   "name": "sprint-1",
   "version": "1.0.0",
   "description": "Functions &amp; Template Literals",
-  "main": "Delivery-1.1.js",
+  "main": "Delivery-1.3.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
+    "type": "module",
     "url": "git+https://github.com/KarolPxz/Entrega-1.1.git"
   },
   "author": "",

@@ -113,4 +113,4 @@ getEmployee(3)
     })
     .catch(err => console.error(err));
 
-  //  export { getSalary, getEmployee, employees, salaries }
+  module.exports = { getSalary: getSalary, getEmployee: getEmployee, employees: employees, salaries: salaries }

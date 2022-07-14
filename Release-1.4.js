@@ -1,8 +1,8 @@
-import  { getSalary, getEmployee } as Module from './Delivery-1.3.js';
+let operations = require("./Delivery-1.3");
 //Level 1
 //- Exercise 1
 //Create an asynchronous function that receives an employee id and prints the employee's name and salary to the screen, using the getEmployee() and getSalary() functions that you defined in the previous task.
-getEmployee(0)
+operations.getEmployee(0)
     .then(employee => {
         getSalary(employee)
             .then(res => console.log(`The user is: ${employee.name },`, `and the salary is: ${res.salary}`));
