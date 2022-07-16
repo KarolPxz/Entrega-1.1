@@ -7,6 +7,8 @@ test('add two or more numbers', () => {
    expect(result).toBe(3);
 
 });
+/*
+// Add
 describe( 'when adding two or more numbers', () => {
    const result = operations.add; 
    test(' if I receive two or more parameters ', () => {
@@ -26,11 +28,30 @@ describe( 'when adding two or more numbers', () => {
    });
 
 });
-
+//Subtract
 describe(' when subtract two or more numbers ', () => {
    const result = operations.subtract;
    test(' if I receive two or more parameters ', () => {
       expect(result( [ 1, 2, 3, 9 ] )).toBe(-15); 
+   });
+   test(' if I receive a single parameter ', () => {
+      expect(result( [ 2 ] )).toBe(2); 
+   });
+   test(' if I receive cero parameters ', () => {
+      expect(result( [] )).toBe(0); 
+   });
+   test(' if I receive nan parameter ', () => {
+      expect(result( [NaN] )).toBe(NaN); 
+   });
+   test(' if I receive Null parameter ', () => {
+      expect(result( [null] )).toBe(0); 
+   });
+})*/
+//Divide
+describe(' when divide two or more numbers ', () => {
+   const result = operations.divide;
+   test(' if I receive two or more parameters ', () => {
+      expect(result( [ 100, 2, 5 ] )).toBe(10); 
    });
    test(' if I receive a single parameter ', () => {
       expect(result( [ 2 ] )).toBe(2); 
