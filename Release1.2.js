@@ -2,7 +2,7 @@
 //- Exercise 1
 //Displays the result of a self-invoking arrow function that adds two numbers to the console.
 
- ((num1, num2) => console.log(num1 + num2))(9,7);
+ console.log((num1, num2) => (num1 + num2)(1,7));
 
 //Level 2
 //- Exercise 1
@@ -17,11 +17,11 @@ let person = {
 let newAge = 0;
 
 //((newAge) => console.log(person))(45); ????
- ((newAge) => {
+ let swhowNewAge = (newAge)=> {
     person.age = newAge;
-    return console.log(person);
- })(20);
-
+    console.log(person);
+ };
+swhowNewAge(20);
 //- Exercise 2
 //Create a class "Person" that receives a 'name' parameter when instantiated. The class will include a method called Name that prints the 'name' parameter to the console. Invoke the method named Name from outside the class.
 
@@ -30,21 +30,21 @@ class Person {
         this.personName = personName;
     }
 
-  name() {
-    return console.log(this.personName);
+  showName() {
+    console.log(this.personName);
   } 
 }
 
 const person1 = new Person('Antonio');
 console.log(person1);
-person1.name();
+person1.showName();
 
 //Level 3
 //- Exercise 1
 //Write an object creator function that instantiates an abstract class. Label it with different definitions.
 class Human {
   constructor () {
-    if (this.constructor = Human) {
+    if (this.constructor == Human) {
       throw Error('This is an abstract class, Human cannot be created');
     }
   }
