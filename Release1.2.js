@@ -2,15 +2,14 @@
 //- Exercise 1
 //Displays the result of a self-invoking arrow function that adds two numbers to the console.
 
- console.log((num1, num2) => (num1 + num2)(1,7));
-
+ console.log((num1, num2) => (num1 + num2)( 1, 7 ));
 //Level 2
 //- Exercise 1
 //Create an arrow function that, receiving a parameter, returns an object with an attribute that has the value of the received parameter.
 
 let person = {
     name : 'Toni',
-    surname: 'Rodrigu',
+    surname: 'Rodriguez',
     age: 5,
 }
 
@@ -56,15 +55,17 @@ try {
   console.error(error);
 }
 
-
 const Men = function (name) {
   this.name = name;
   console.log('this is an instance of an abstract class');
 }
-
-Men.prototype = Object.create(Human.prototype);
-let men = new Men('Toni');
+function createInstance(name) {
+  Men.prototype = Object.create(Human.prototype);
+let men = new Men(name);
 console.log(men);
 console.log(men instanceof Men);
 console.log(men instanceof Human );
+}
+createInstance('the Toni');
+
 
