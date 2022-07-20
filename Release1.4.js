@@ -24,7 +24,7 @@ function delayedFunc() {
     return new Promise(( res, rej ) => {
         setTimeout( () => res ("I'm here now"), 2000 )
     });
-};
+}
 
 async function execFunc() {
     try {
@@ -33,5 +33,5 @@ async function execFunc() {
     } catch (error) {
         console.log(error);
     }
-};
+}
 execFunc();
