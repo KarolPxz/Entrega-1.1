@@ -60,7 +60,7 @@ let person = Human.prototype = Object.create(Human.prototype);
 let person2 = createInstance('Toni', `boy`);
 let person3 = createInstance('Karol', `girl`);
 
-console.log(`the ${person2.gender}  ${person2.name} is a instance of Hmunan:`, person2 instanceof Human );
-console.log(`the ${person3.gender}  ${person3.name} is a instance of Hmunan:`, person3 instanceof Human);
+console.log(`the ${person2.gender}  ${person2.name} is a instance of Hunan:`, person2 instanceof Human );
+console.log(`the ${person3.gender}  ${person3.name} is a instance of Hunan:`, person3 instanceof Human);
 
 
