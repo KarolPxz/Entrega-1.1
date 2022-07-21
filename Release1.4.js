@@ -47,34 +47,32 @@ twiceNumber(3);
 console.log(`hhh`, twiceNumber(6));
 //Create another function that receives three numbers and calculates the sum of their doubles using the previous function.
 
-const sumNumbers = async function( num1, num2, num3 ) {
+const sumNumbers = async ( num1, num2, num3 )=> {
     let numbers = [ num1, num2, num3 ];
+    let doubles = [];
     let sum = 0;
-    let i = 0; 
- do {
-  
-    let aux=  await twiceNumber( numbers[i] );  
-    sum =  sum +await aux;
-     // sum += await numbers[i];
-      console.log(sum);
-      sum =  numbers.reduce(( a, b ) =>( a +  b ), 0 );
-     // console.log(sum);
-      i++; 
-      console.log(sum);
- } while (i < numbers.length);
- //sum +=numbers[i]
-   
-    //  await numbers[i]
-     // sum += numbers[i];
-      
+    
+    for (const element of numbers) {
+      await twiceNumber( element );
+      doubles += twiceNumber( element )
+      console.log( `the sum 1 is`, sum ); 
+    }
+   // sum = await doubles.reduce(( a, b ) => ( a + b ), 0)
+    console.log(`the sum reduce is`, sum);
+ 
+    for (const element of numbers) {
+        sum += await element;
+    }
+ 
 
     
-    
-    console.log(numbers);
-    console.log( `the sum is`, sum );
-    
-    sum = numbers.reduce(( a, b ) =>( a + b ), 0 );
+   
     console.log(`the sum is`, sum);
     return sum
 }
-sumNumbers( 10, 10, 10 );
+let sum = sumNumbers( 10, 10, 10 );
+console.log(`sum is:`, sum);
+
+// Level 3
+// - Exercise 1
+// Force and catch as many bugs as you can from levels 1 and 2.
