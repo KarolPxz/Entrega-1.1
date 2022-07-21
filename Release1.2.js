@@ -2,7 +2,7 @@
 //- Exercise 1
 //Displays the result of a self-invoking arrow function that adds two numbers to the console.
 
- console.log((num1, num2) => (num1 + num2)( 1, 7 ));
+ console.log((( num1, num2 ) => ( num1 + num2 ))( 1, 7 ));
 //Level 2
 //- Exercise 1
 //Create an arrow function that, receiving a parameter, returns an object with an attribute that has the value of the received parameter.
