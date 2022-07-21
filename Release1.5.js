@@ -16,7 +16,7 @@ function writeFile(text, text) {
 writeFile( 'file.txt', text );
 
 //- Exercise 2
-//Create another function that displays the content of the file from the previous exercise on the console.
+//Create another function that displays the contentadd . of the file from the previous exercise on the console.
 function showFile( fileName ) {
     fs.readFile( fileName, function ( err, data ) {
         if (err)

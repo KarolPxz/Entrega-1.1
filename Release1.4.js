@@ -10,8 +10,7 @@ async function showEmployee( id ) {
  
         console.log(`The user (from release 1.4) is: ${getEmpl.name },`, `and the salary is:  ${getSal.salary }`)
     } catch (error) {
-        console.error('...no data');
-        
+        console.error('...no data');    
    }
 }
 showEmployee(1);
@@ -35,3 +34,47 @@ async function execFunc() {
     }
 }
 execFunc();
+// Level 2
+//- Exercise 1
+//Create a function that returns twice the number passed to it as a parameter after 2 seconds.
+ const twiceNumber = function( num ) {
+    return new Promise(res => {
+        setTimeout(() => res(console.log( 2 * num )  ), 2000); //remove the console log?
+    });
+}
+
+twiceNumber(3);
+console.log(`hhh`, twiceNumber(6));
+//Create another function that receives three numbers and calculates the sum of their doubles using the previous function.
+
+const sumNumbers = async function( num1, num2, num3 ) {
+    let numbers = [ num1, num2, num3 ];
+    let sum = 0;
+    let i = 0; 
+ do {
+  
+    let aux=  await twiceNumber( numbers[i] );  
+    sum =  sum +await aux;
+     // sum += await numbers[i];
+      console.log(sum);
+      sum =  numbers.reduce(( a, b ) =>( a +  b ), 0 );
+     // console.log(sum);
+      i++; 
+      console.log(sum);
+ } while (i < numbers.length);
+ //sum +=numbers[i]
+   
+    //  await numbers[i]
+     // sum += numbers[i];
+      
+
+    
+    
+    console.log(numbers);
+    console.log( `the sum is`, sum );
+    
+    sum = numbers.reduce(( a, b ) =>( a + b ), 0 );
+    console.log(`the sum is`, sum);
+    return sum
+}
+sumNumbers( 10, 10, 10 );
